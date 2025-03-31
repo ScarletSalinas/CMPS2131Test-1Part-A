@@ -23,4 +23,19 @@ void BinarySearchTree::remove(int value) {
     root = removeHelper(root, value);
 }
 
+// Traversal methods
+void BinarySearchTree::preOrderTraversal() const {
+    preOrderHelper(root);
+}
 
+void BinarySearchTree::inOrderTraversal() const {
+    inOrderHelper(root);
+}
+
+void BinarySearchTree::postOrderTraversal() const {
+    postOrderHelper(root);
+}
+
+void BinarySearchTree::levelOrderTraversal() const {
+    levelOrderHelper(root);
+}
