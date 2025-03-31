@@ -39,3 +39,15 @@ void BinarySearchTree::postOrderTraversal() const {
 void BinarySearchTree::levelOrderTraversal() const {
     levelOrderHelper(root);
 }
+
+// Tree properties
+int BinarySearchTree::getCount() const {
+    return treeCount(root);
+}
+
+int BinarySearchTree::getHeight() const {
+    return treeHeight(root);
+}
+
+// private helper methods
+
