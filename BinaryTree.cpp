@@ -50,4 +50,17 @@ int BinarySearchTree::getHeight() const {
 }
 
 // private helper methods
+BinaryTreeNode* BinarySearchTree::insertHelper(BinaryTreeNode* node, int value) {
+    // Case 1: empty tree
+    if(node == nullptr) {
+        return new BinaryTreeNode(value); // Insert new node
+    }
 
+    // Case 2: if value < current (parent) node's value
+    if(value < node->value) {
+        node->left = insertHelper(node->left, value); 
+    } else if(value > node->value) {  // Case 2: if value > current (parent) node's value
+        node->right = insertHelper(node->right, value);
+    }
+    return node;
+}
