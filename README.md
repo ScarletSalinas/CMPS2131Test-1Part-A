@@ -1,4 +1,9 @@
-Test #1 Part A: Binary Search Tree
+## Test #1 Part A: Binary Search Tree
+
+## Files
+main.cpp
+BinaryTree.cpp
+BinaryTree.h
 
 ## Usage
   1. Compile all the .cpp files together into a single executable.
