@@ -9,7 +9,11 @@ int main() {
     tree.insert(30);
     cout << endl;
     cout << "count: " << tree.getCount();
-    cout << "\nResult: " << tree.search(30 << endl;
+    cout << "\nResult: " << tree.search(30) << endl;
     tree.preOrderTraversal();
+    cout << endl;
+    tree.inOrderTraversal();
+    cout << endl;
+    tree.postOrderTraversal();
 
 }

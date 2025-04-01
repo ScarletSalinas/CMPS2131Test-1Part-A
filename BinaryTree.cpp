@@ -105,14 +105,31 @@ void BinarySearchTree:: preOrderHelper(BinaryTreeNode* node) const {
 }
 
 void BinarySearchTree:: inOrderHelper(BinaryTreeNode* node) const {
-    cout << "inOrderHelper Implementation goes here:";
+    if(node == nullptr) {
+        return;
+    }
+
+    inOrderHelper(node->left);
+    cout << node->value << " ";
+    inOrderHelper(node->right);
 }
+
 void BinarySearchTree:: postOrderHelper(BinaryTreeNode* node) const {
-    cout << "postOrderHelper Implementation goes here:";
+    if(node == nullptr) {
+        return;
+    }
+
+    if (node == nullptr) return;
+    postOrderHelper(node->left);
+    postOrderHelper(node->right);
+    cout << node->value << " ";
 }
 void BinarySearchTree:: levelOrderHelper(BinaryTreeNode* node) const {
-    cout << "levelOrderHelper Implementation goes here:";
+    if(node == nullptr) {
+        return;
+    }
 
+    
 }
 
 int BinarySearchTree:: treeHeight(BinaryTreeNode* node) const {
