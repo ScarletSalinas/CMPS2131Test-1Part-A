@@ -15,8 +15,8 @@ int main() {
 
     cout << "\nlevel order traversal:\n";
     tree.levelOrderTraversal();
-    tree.remove(40);
-    cout << "\nlevel order traversalfter deleting (40): ";
+    tree.remove(70);
+    cout << "\nlevel order traversalfter deleting (40):\n ";
     tree.levelOrderTraversal();
 
     

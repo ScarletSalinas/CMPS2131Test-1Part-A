@@ -115,13 +115,21 @@ BinaryTreeNode* BinarySearchTree::removeHelper(BinaryTreeNode* node, int value) 
         return leftChild;
     }
 
-    // Case 3: Two children
-    BinaryTreeNode* successor = node->right;
-    while (successor->left != nullptr) {
-        successor = successor->left;
+    if (node->right->left == nullptr) {
+        // Successor is the right child
+        node->value = node->right->value;
+        node->right = node->right->right;
+        delete node->right;  // Now safe to delete
+    } else {
+        BinaryTreeNode* successor = node->right;
+        while (successor->left->left != nullptr) {
+            successor = successor->left;
+        }
+        node->value = successor->left->value;
+        BinaryTreeNode* temp = successor->left;
+        successor->left = successor->left->right;
+        delete temp;
     }
-    node->value = successor->value;  // Replace value
-    node->right = removeHelper(node->right, successor->value);  // Delete successor
     return node;
 }
 
