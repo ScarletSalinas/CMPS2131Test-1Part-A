@@ -1,4 +1,5 @@
 #include "BinaryTree.h"
+#include <algorithm>
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -207,8 +208,18 @@ void BinarySearchTree:: levelOrderHelper(BinaryTreeNode* node) const {
 }
 
 int BinarySearchTree:: treeHeight(BinaryTreeNode* node) const {
-    // TODO: Implement height calculation
-    return 0;
+    // Base case: empty tree height = -1
+    if(node == nullptr) {
+        return -1;
+    }
+
+    // Height of left + right subtrees
+    int leftHeight = treeHeight(node->left);    
+    int rightHeight = treeHeight(node->right);
+
+    // Current node adds 1 to taller subtree height
+    return 1 + max(leftHeight, rightHeight);
+
 }
 void BinarySearchTree::destroyTree(BinaryTreeNode* node) {
     if (node != nullptr) {
