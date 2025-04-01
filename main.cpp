@@ -26,6 +26,7 @@ int main() {
     tree.remove(34);
     tree.remove(10);
     tree.remove(100);
+    tree.levelOrderTraversal();
 
 
 

@@ -97,7 +97,7 @@ BinaryTreeNode* BinarySearchTree::removeHelper(BinaryTreeNode* node, int value) 
         node->right = removeHelper(node->right, value);
         return node;
     }
-    
+
     // Node found - decrement count once
     nodeCount--;
 
@@ -105,7 +105,6 @@ BinaryTreeNode* BinarySearchTree::removeHelper(BinaryTreeNode* node, int value) 
     if (node->left == nullptr) {
         BinaryTreeNode* rightChild = node->right;
         delete node;
-        nodeCount--;
         return rightChild;
     }
 
@@ -113,7 +112,6 @@ BinaryTreeNode* BinarySearchTree::removeHelper(BinaryTreeNode* node, int value) 
     if (node->right == nullptr) {
         BinaryTreeNode* leftChild = node->left;
         delete node;
-        nodeCount--;
         return leftChild;
     }
 
