@@ -18,6 +18,7 @@ int main() {
     tree.remove(70);
     cout << "\nlevel order traversalfter deleting (40):\n ";
     tree.levelOrderTraversal();
+    cout << tree.getHeight();
 
     
 
