@@ -13,9 +13,14 @@ BinarySearchTree::~BinarySearchTree() {
 
 // Public methods
 void BinarySearchTree::insert(int value) {
+    if (search(value)) {  // Check for existing value
+        cerr << "Error: " << value << " already exists.\n";
+        return;
+    }
+
     root = insertHelper(root, value);
     nodeCount++;
-    cout << "Sucessfully inserted: " << value << endl;
+    cout << "(" << value << ")" << " sucessfully inserted. Total nodes in Tree: " << nodeCount << endl;
     
 }
 
@@ -96,8 +101,8 @@ bool BinarySearchTree:: searchHelper(BinaryTreeNode* node, int value) const {
 
 void BinarySearchTree:: preOrderHelper(BinaryTreeNode* node) const {
     if(node == nullptr) {
-    return;
-   }
+        return;
+    }
 
     cout << node->value << " ";
     preOrderHelper(node->left);
@@ -119,7 +124,6 @@ void BinarySearchTree:: postOrderHelper(BinaryTreeNode* node) const {
         return;
     }
 
-    if (node == nullptr) return;
     postOrderHelper(node->left);
     postOrderHelper(node->right);
     cout << node->value << " ";
