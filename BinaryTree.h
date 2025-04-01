@@ -28,6 +28,7 @@ class BinarySearchTree {
     
     private:
         BinaryTreeNode* root;
+        int nodeCount;
 
         // Helper funcs
         BinaryTreeNode* insertHelper(BinaryTreeNode* node, int value);
@@ -40,7 +41,6 @@ class BinarySearchTree {
         void postOrderHelper(BinaryTreeNode* node) const;
         void levelOrderHelper(BinaryTreeNode* node) const;
         
-        int treeCount(BinaryTreeNode* node) const;
         int treeHeight(BinaryTreeNode* node) const;
         void destroyTree(BinaryTreeNode* node);
 

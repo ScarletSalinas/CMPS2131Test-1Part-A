@@ -1,9 +1,10 @@
-#include "BinaryTree.h";
-#include <iostream>;
-#include <queue>;
+#include "BinaryTree.h"
+#include <iostream>
+#include <queue>
+using namespace std;
 
 // Constructor
-BinarySearchTree::BinarySearchTree() : root(nullptr) {}
+BinarySearchTree::BinarySearchTree() : root(nullptr), nodeCount(0) {}
 
 // Destructor
 BinarySearchTree::~BinarySearchTree() {
@@ -13,6 +14,9 @@ BinarySearchTree::~BinarySearchTree() {
 // Public methods
 void BinarySearchTree::insert(int value) {
     root = insertHelper(root, value);
+    nodeCount++;
+    cout << "Sucessfully inserted: " << value << endl;
+    
 }
 
 bool BinarySearchTree::search(int value) const {
@@ -42,7 +46,7 @@ void BinarySearchTree::levelOrderTraversal() const {
 
 // Tree properties
 int BinarySearchTree::getCount() const {
-    return treeCount(root);
+    return nodeCount;
 }
 
 int BinarySearchTree::getHeight() const {
@@ -62,5 +66,39 @@ BinaryTreeNode* BinarySearchTree::insertHelper(BinaryTreeNode* node, int value) 
     } else if(value > node->value) {  // Case 2: if value > current (parent) node's value
         node->right = insertHelper(node->right, value);
     }
+    
     return node;
+}
+
+BinaryTreeNode* BinarySearchTree::removeHelper(BinaryTreeNode* node, int value) {
+    return node;
+
+}
+
+bool BinarySearchTree:: searchHelper(BinaryTreeNode* node, int value) const {
+    return 0;   
+}
+
+void BinarySearchTree:: preOrderHelper(BinaryTreeNode* node) const {
+    cout << "preOrderHelper Implementation goes here:";
+}
+
+void BinarySearchTree:: inOrderHelper(BinaryTreeNode* node) const {
+    cout << "inOrderHelper Implementation goes here:";
+}
+void BinarySearchTree:: postOrderHelper(BinaryTreeNode* node) const {
+    cout << "postOrderHelper Implementation goes here:";
+}
+void BinarySearchTree:: levelOrderHelper(BinaryTreeNode* node) const {
+    cout << "levelOrderHelper Implementation goes here:";
+
+}
+
+int BinarySearchTree:: treeHeight(BinaryTreeNode* node) const {
+    // TODO: Implement height calculation
+    return 0;
+}
+void BinarySearchTree:: destroyTree(BinaryTreeNode* node) {
+    // TODO: Implement tree destruction
+
 }
