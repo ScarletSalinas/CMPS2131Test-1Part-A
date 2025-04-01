@@ -63,7 +63,7 @@ BinaryTreeNode* BinarySearchTree::insertHelper(BinaryTreeNode* node, int value) 
     // Case 2: if value < current (parent) node's value
     if(value < node->value) {
         node->left = insertHelper(node->left, value); 
-    } else if(value > node->value) {  // Case 2: if value > current (parent) node's value
+    } else if(value > node->value) {  // Case 3: if value > current (parent) node's value
         node->right = insertHelper(node->right, value);
     }
     
@@ -76,7 +76,22 @@ BinaryTreeNode* BinarySearchTree::removeHelper(BinaryTreeNode* node, int value) 
 }
 
 bool BinarySearchTree:: searchHelper(BinaryTreeNode* node, int value) const {
-    return 0;   
+    // Case 1: end of tree
+    if(node == nullptr) {
+        return false;
+    }   
+
+    // Case 2: found match
+    if(value == node->value) {
+        return true;
+    }
+
+    // Recursive cases
+    if(value < node->value) {
+        return searchHelper(node->left, value); 
+    } else {  
+        return searchHelper(node->right, value);
+    }
 }
 
 void BinarySearchTree:: preOrderHelper(BinaryTreeNode* node) const {

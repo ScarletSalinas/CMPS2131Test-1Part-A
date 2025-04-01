@@ -9,5 +9,6 @@ int main() {
     tree.insert(30);
     cout << endl;
     cout << "count: " << tree.getCount();
+    cout << endl << tree.search(30);
 
 }
