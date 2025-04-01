@@ -210,7 +210,10 @@ int BinarySearchTree:: treeHeight(BinaryTreeNode* node) const {
     // TODO: Implement height calculation
     return 0;
 }
-void BinarySearchTree:: destroyTree(BinaryTreeNode* node) {
-    // TODO: Implement tree destruction
-
+void BinarySearchTree::destroyTree(BinaryTreeNode* node) {
+    if (node != nullptr) {
+        destroyTree(node->left);   // Delete left subtree
+        destroyTree(node->right);  // Delete right subtree
+        delete node;              // Delete current node
+    }
 }
