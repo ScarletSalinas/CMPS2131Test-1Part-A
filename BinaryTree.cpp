@@ -1,4 +1,5 @@
 #include "BinaryTree.h"
+#include <algorithm>
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -30,7 +31,7 @@ bool BinarySearchTree::search(int value) const {
 void BinarySearchTree::remove(int value) {
     // Using search
     if(!search(value)) {
-        cout << "Value (" << value << ") not found.\n";
+        cerr << "Value (" << value << ") not found.\n";
         return;
     }
     root = removeHelper(root, value);
@@ -217,7 +218,7 @@ int BinarySearchTree:: treeHeight(BinaryTreeNode* node) const {
     int rightHeight = treeHeight(node->right); 
 
     // Current node adds 1 to max subtree height
-    return 1 + std::max(leftHeight, rightHeight);  
+    return 1 + max(leftHeight, rightHeight);  
 }
 void BinarySearchTree::destroyTree(BinaryTreeNode* node) {
     if (node != nullptr) {

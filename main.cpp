@@ -20,13 +20,39 @@ int main() {
     tree.insert(56);
     tree.insert(100);
 
+    cout << "\nLevel Order Traversal:\n";
+    tree.levelOrderTraversal();
+
+
     tree.remove(89);
     tree.remove(66);
     tree.remove(40);
     tree.remove(34);
     tree.remove(10);
     tree.remove(100);
+
+    cout << "After deletion: ";
+
+    cout << "Level Order Traversal:\n";
     tree.levelOrderTraversal();
+
+    cout << "Pre-Order Traversal: ";
+    tree.preOrderTraversal();
+    cout << endl << endl;
+
+    cout << "In-Order Traversal: ";
+    tree.inOrderTraversal();
+    cout << endl;
+
+    cout << "Post-Order Traversal: ";
+    tree.postOrderTraversal();
+    cout << endl << endl;
+
+    cout << "Result: " << tree.search(77) << endl;
+    cout << "Result: " << tree.search(99) << endl;
+
+    cout << "Nodes in tree: " << tree.getCount() << endl;
+    cout << "Height of Tree: "<< tree.getHeight() << endl;
 
 
 
