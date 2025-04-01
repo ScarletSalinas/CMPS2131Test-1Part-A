@@ -124,11 +124,28 @@ void BinarySearchTree:: postOrderHelper(BinaryTreeNode* node) const {
     postOrderHelper(node->right);
     cout << node->value << " ";
 }
+
 void BinarySearchTree:: levelOrderHelper(BinaryTreeNode* node) const {
     if(node == nullptr) {
         return;
     }
 
+    queue<BinaryTreeNode*> q;
+    q.push(node);
+    
+    while (!q.empty()) {
+        int levelSize = q.size();  // Capture current level size
+
+        for (int i = 0; i < levelSize; ++i) {
+            BinaryTreeNode* current = q.front();
+            q.pop();
+            cout << current->value << " ";
+            
+            if (current->left) q.push(current->left);
+            if (current->right) q.push(current->right);
+        }
+        cout << endl;  // Newline after level
+    }
     
 }
 

@@ -15,5 +15,7 @@ int main() {
     tree.inOrderTraversal();
     cout << endl;
     tree.postOrderTraversal();
+    cout << endl;
+    tree.levelOrderTraversal();
 
 }
