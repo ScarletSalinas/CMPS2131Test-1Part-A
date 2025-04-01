@@ -34,7 +34,6 @@ void BinarySearchTree::remove(int value) {
         return;
     }
     root = removeHelper(root, value);
-    nodeCount--;
     cout << "Value (" << value << ")" << " sucessfully removed. Total nodes in Tree: " << nodeCount << endl;
     
 }
@@ -98,6 +97,9 @@ BinaryTreeNode* BinarySearchTree::removeHelper(BinaryTreeNode* node, int value) 
         node->right = removeHelper(node->right, value);
         return node;
     }
+    
+    // Node found - decrement count once
+    nodeCount--;
 
     // Case 1: No left child
     if (node->left == nullptr) {

@@ -12,13 +12,22 @@ int main() {
     tree.insert(40);
     tree.insert(60);
     tree.insert(80);
+    tree.insert(10);
+    tree.insert(89);
+    tree.insert(66);
+    tree.insert(77);
+    tree.insert(34);
+    tree.insert(56);
+    tree.insert(100);
 
-    cout << "\nlevel order traversal:\n";
-    tree.levelOrderTraversal();
-    tree.remove(70);
-    cout << "\nlevel order traversalfter deleting (40):\n ";
-    tree.levelOrderTraversal();
-    cout << tree.getHeight();
+    tree.remove(89);
+    tree.remove(66);
+    tree.remove(40);
+    tree.remove(34);
+    tree.remove(10);
+    tree.remove(100);
+
+
 
     
 
