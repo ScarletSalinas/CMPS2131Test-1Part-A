@@ -95,7 +95,13 @@ bool BinarySearchTree:: searchHelper(BinaryTreeNode* node, int value) const {
 }
 
 void BinarySearchTree:: preOrderHelper(BinaryTreeNode* node) const {
-    cout << "preOrderHelper Implementation goes here:";
+    if(node == nullptr) {
+    return;
+   }
+
+    cout << node->value << " ";
+    preOrderHelper(node->left);
+    preOrderHelper(node->right);
 }
 
 void BinarySearchTree:: inOrderHelper(BinaryTreeNode* node) const {
